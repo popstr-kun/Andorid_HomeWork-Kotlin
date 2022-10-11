@@ -1,7 +1,6 @@
 package com.example.mora
 
 import android.annotation.SuppressLint
-import android.app.SearchManager.OnCancelListener
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -9,9 +8,9 @@ import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.TextView
 
+
+
 class MainActivity : AppCompatActivity() {
-
-
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +31,8 @@ class MainActivity : AppCompatActivity() {
         btnMora.setOnClickListener{
             if(edName.length() < 1) tvText.text = "請輸入玩家姓名"
             else{
-                tvName.text = String.format("名字\n%s",edName.text.toString())
+                tvName.text = "名字\n${edName.text}"
+
 
                 if(btnScissor.isChecked) tvMmora.text = "我方出拳\n剪刀"
                 else if (btnStone.isChecked) tvMmora.text = "我方出拳\n石頭"
