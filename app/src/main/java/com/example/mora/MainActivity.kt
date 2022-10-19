@@ -33,10 +33,12 @@ class MainActivity : AppCompatActivity() {
             else{
                 tvName.text = "名字\n${edName.text}"
 
-
-                if(btnScissor.isChecked) tvMmora.text = "我方出拳\n剪刀"
-                else if (btnStone.isChecked) tvMmora.text = "我方出拳\n石頭"
-                else tvMmora.text = "我方出拳\n布"
+                if(btnScissor.isChecked)
+                    tvMmora.text = "我方出拳\n剪刀"
+                else if(btnStone.isChecked)
+                    tvMmora.text = "我方出拳\n石頭"
+                else
+                    tvMmora.text = "我方出拳\n布"
 
                 val computer : Int = (0..2).random()
 
@@ -47,11 +49,11 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 if(
-                    (btnScissor.isChecked) && (computer == 2) ||
-                    (btnStone.isChecked)   && (computer == 0) ||
+                    (btnScissor.isChecked) && (computer == 2)||
+                    (btnStone.isChecked)   && (computer == 0)||
                     (btnPaper.isChecked)   && (computer == 1)
                 ){
-                    tvWinner.text = "勝利者\n"+edName.text.toString()
+                    tvWinner.text = "勝利者\n${edName.text}"
                     tvText.text   = "恭喜你獲勝"
                 }
                 else if((btnScissor.isChecked && computer == 1)||
